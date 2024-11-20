@@ -4,8 +4,8 @@ import requests
 import threading
 from PIL import Image
 from io import BytesIO
-from comfy.utils import image_to_tensor
-from ComfyUI_IPAdapter_plus.IPAdapterPlus import execute as ipadpter_execute
+from ComfyUI_IPAdapter_plus.utils import image_to_tensor
+from ComfyUI_IPAdapter_plus.IPAdapterPlus import ipadapter_execute
 
 class IPAdapterSameEnergy:
     """
@@ -111,7 +111,7 @@ class IPAdapterSameEnergy:
         image = image_to_tensor(reference_img)
         
         # Call IPAdapter execute function with our parameters
-        model = ipadpter_execute(
+        model = ipadapter_execute(
             model=model,
             ipadapter=ipadapter,
             clipvision=clip_vision,
